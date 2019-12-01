@@ -11,6 +11,15 @@ export const clearResults = () => {
     elements.searchResPages.innerHTML = '';
 };
 
+export const highlightSelected = id => {
+    const resulsArr = Array.from(document.querySelectorAll('.results__link'));
+    resulsArr.forEach(el => {
+        el.classList.remove('results__link--active');
+    })
+
+    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');
+}
+
 /*
     // pizza bacon broccoli - Pasta with tomato and spinach
     acc: 0 / acc + cur.lenght = 5 / newTitle = ['pasta']
